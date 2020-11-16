@@ -46,7 +46,7 @@ namespace _05_guessing_game
 
             // Tell user how many tries they have.
             Console.WriteLine($"You have {totalTries} tries.");
-            Console.WriteLine($"Guess the secret number:");
+            Console.Write($"Guess the secret number: ");
             // Allow user to enter int
             userGuess = int.Parse(Console.ReadLine());
 
@@ -70,7 +70,7 @@ namespace _05_guessing_game
                 // Remove one of the user's tries.
                 userTries--;
                 // Tell user how many tries are left.
-                Console.WriteLine($"{userTries} out of {totalTries} tries left. Enter a new number:");
+                Console.Write($"{userTries} out of {totalTries} tries left. Enter a new number: ");
                 // Let the user guess again.
                 userGuess = int.Parse(Console.ReadLine());
                 Console.WriteLine("");
