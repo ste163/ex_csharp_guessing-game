@@ -6,9 +6,15 @@ namespace _05_guessing_game
     {
         static void Main(string[] args)
         {
+            int secretNumber = 43;
             Console.WriteLine("Guess the secret number:");
-            string userGuess = Console.ReadLine();
-            Console.WriteLine($"You guessed: {userGuess}");
+            int userGuess = int.Parse(Console.ReadLine());
+            while (userGuess != secretNumber)
+            {
+                Console.WriteLine($"Incorrect! You guessed {userGuess}. Try again!");
+                userGuess = int.Parse(Console.ReadLine());
+            }
+            Console.WriteLine($"Correct! The secret number is {secretNumber}");
         }
     }
 }
