@@ -6,7 +6,7 @@ namespace _05_guessing_game
     {
         static void Main(string[] args)
         {
-            int secretNumber = 43;
+            int secretNumber = new Random().Next(1, 101);
             Console.WriteLine("Guess the secret number:");
             int userGuess = int.Parse(Console.ReadLine());
             int userTries = 0;
