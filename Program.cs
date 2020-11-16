@@ -7,42 +7,41 @@ namespace _05_guessing_game
         static void Main(string[] args)
         {
             int secretNumber = new Random().Next(1, 101);   
-            int userGuess = int.Parse(Console.ReadLine());
-            // int difficultyMode = 0;
-            int userTries = 4;
-            int totalTries = 4;
+            int userGuess;
+            int userTries = 0;
+            int totalTries = 0;
+            int difficultyMode = 0;
 
-            // while (difficultyMode == 0)
-            // {
-            //     Console.WriteLine("Select a difficulty:");
-            //     Console.WriteLine("1) Easy - eight guesses");
-            //     Console.WriteLine("2) Medium - six guesses");
-            //     Console.WriteLine("3) Hard - four guesses");
 
-            //     difficultyMode = int.Parse(Console.ReadLine());
+            while (difficultyMode != 1 && difficultyMode != 2 && difficultyMode != 3)
+            {
+                Console.WriteLine("Enter a difficulty number:");
+                Console.WriteLine("1) Easy - eight guesses");
+                Console.WriteLine("2) Medium - six guesses");
+                Console.WriteLine("3) Hard - four guesses");
 
-            //     switch (difficultyMode)
-            //     {
-            //         case 1:
-            //             userTries = 8;
-            //             totalTries = 8;
-            //             break;
-            //         case 2:
-            //             userTries = 6;
-            //             totalTries = 6;
-            //             break;
-            //         case 3:
-            //             userTries = 4;
-            //             totalTries = 4;
-            //             break;
-            //         default:
-            //             Console.WriteLine("Must select 1, 2, or 3.");
-            //             difficultyMode = int.Parse(Console.ReadLine());
-            //             break;
-            //     }
-            // }
+                difficultyMode = int.Parse(Console.ReadLine());
 
+                switch (difficultyMode)
+                {
+                    case 1:
+                        userTries = 8;
+                        totalTries = 8;
+                        break;
+                    case 2:
+                        userTries = 6;
+                        totalTries = 6;
+                        break;
+                    case 3:
+                        userTries = 4;
+                        totalTries = 4;
+                        break;
+                }
+            }
+
+            Console.WriteLine($"You have {totalTries} tries.");
             Console.WriteLine($"Guess the secret number: {secretNumber}");
+            userGuess = int.Parse(Console.ReadLine());
             while (userGuess != secretNumber && userTries != 1)
             {
                 Console.WriteLine("Incorrect.");
@@ -70,7 +69,7 @@ namespace _05_guessing_game
             {
                 Console.WriteLine($"Ran out of tries!");
             }
-
+        
         }
     }
 }
